@@ -1,6 +1,11 @@
 package net.descroissant.explosivesmod;
 
 import com.mojang.logging.LogUtils;
+import net.descroissant.explosivesmod.entity.ModEntities;
+import net.descroissant.explosivesmod.item.ModCreativeModeTabs;
+import net.descroissant.explosivesmod.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -22,6 +27,12 @@ public class ExplosivesMod {
     public ExplosivesMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
+        ModEntities.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -34,7 +45,6 @@ public class ExplosivesMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -48,7 +58,7 @@ public class ExplosivesMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.GRENADE_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 }
