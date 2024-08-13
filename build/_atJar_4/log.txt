@@ -1,0 +1,7 @@
+Java Launcher: /Users/011935/.gradle/jdks/eclipse_adoptium-17-aarch64-os_x/jdk-17.0.12+7/Contents/Home/bin/java
+Arguments: '--inJar, /Users/011935/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.0.19/forge-1.20.1-47.0.19-injected.jar, --outJar, /Users/011935/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar, --logFile, accesstransform.log, --atFile, /Users/011935/Programming/Explosives Mod/build/_atJar_4/parent_at.cfg'
+Classpath:
+ - /Users/011935/.gradle/caches/forge_gradle/maven_downloader/net/minecraftforge/accesstransformers/8.2.0/accesstransformers-8.2.0-fatjar.jar
+Working directory: /Users/011935/Programming/Explosives Mod/build/_atJar_4
+Main class: net.minecraftforge.accesstransformer.TransformerProcessor
+====================================

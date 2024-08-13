@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Explosives_Mod.iml" filepath="$PROJECT_DIR$/.idea/modules/Explosives_Mod.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Explosives_Mod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Explosives_Mod.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Explosives_Mod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Explosives_Mod.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.examplemod.Explosives_Mod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.examplemod.Explosives_Mod.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.examplemod.Explosives_Mod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.examplemod.Explosives_Mod.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.descroissant.explosivesmod.Explosives_Mod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.descroissant.explosivesmod.Explosives_Mod.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.descroissant.explosivesmod.Explosives_Mod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.descroissant.explosivesmod.Explosives_Mod.test.iml" />
     </modules>
   </component>
 </project>
