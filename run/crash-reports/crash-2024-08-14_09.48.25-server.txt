@@ -1,0 +1,154 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 2024-08-14 09:48:25
+Description: Ticking entity
+
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[?:?] {}
+	at jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[?:?] {}
+	at jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266) ~[?:?] {}
+	at java.util.Objects.checkIndex(Objects.java:361) ~[?:?] {}
+	at java.util.ArrayList.get(ArrayList.java:427) ~[?:?] {re:computing_frames}
+	at net.descroissant.explosivesmod.entity.custom.GrenadeProjectileEntity.onHit(GrenadeProjectileEntity.java:55) ~[%23189!/:?] {re:classloading}
+	at net.minecraft.world.entity.projectile.ThrowableProjectile.tick(ThrowableProjectile.java:62) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:693) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:479) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$6(ServerLevel.java:343) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:323) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:895) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:816) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:89) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:663) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[?:?] {}
+	at jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[?:?] {}
+	at jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266) ~[?:?] {}
+	at java.util.Objects.checkIndex(Objects.java:361) ~[?:?] {}
+	at java.util.ArrayList.get(ArrayList.java:427) ~[?:?] {re:computing_frames}
+	at net.descroissant.explosivesmod.entity.custom.GrenadeProjectileEntity.onHit(GrenadeProjectileEntity.java:55) ~[%23189!/:?] {re:classloading}
+	at net.minecraft.world.entity.projectile.ThrowableProjectile.tick(ThrowableProjectile.java:62) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:693) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:479) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$6(ServerLevel.java:343) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:323) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+-- Entity being ticked --
+Details:
+	Entity Type: explosivesmod:grenade_projectile (net.descroissant.explosivesmod.entity.custom.GrenadeProjectileEntity)
+	Entity ID: 1
+	Entity Name: entity.explosivesmod.grenade_projectile
+	Entity's Exact location: -95.36, 16.31, -67.87
+	Entity's Block location: World: (-96,16,-68), Section: (at 0,0,12 in -6,1,-5; chunk contains blocks -96,-64,-80 to -81,319,-65), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Entity's Momentum: -0.59, -0.70, -0.55
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:479) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$6(ServerLevel.java:343) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:323) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:895) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:816) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:89) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:663) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: 2209
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-95,80,-82), Section: (at 1,0,14 in -6,5,-6; chunk contains blocks -96,-64,-96 to -81,319,-81), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Level time: 935862 game time, 1000 day time
+	Level name: Dust II by fragger57
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: true
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Known server brands: fabric, forge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:895) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:816) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:89) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:663) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1.jar%23184!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Mac OS X (aarch64) version 14.6.1
+	Java Version: 17.0.11, JetBrains s.r.o.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), JetBrains s.r.o.
+	Memory: 437305352 bytes (417 MiB) / 1265631232 bytes (1207 MiB) up to 2147483648 bytes (2048 MiB)
+	CPUs: 8
+	Processor Vendor: Apple Inc.
+	Processor Name: Apple M1
+	Identifier: Apple Inc. Family 0x1b588bb3 Model 0 Stepping 0
+	Microarchitecture: ARM64 SoC: Firestorm + Icestorm
+	Frequency (GHz): 3.20
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 8
+	Graphics card #0 name: Apple M1
+	Graphics card #0 vendor: Apple (0x106b)
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Memory slot #0 capacity (MB): 0.00
+	Memory slot #0 clockSpeed (GHz): 0.00
+	Memory slot #0 type: unknown
+	Virtual memory max (MB): 11264.00
+	Virtual memory used (MB): 9419.08
+	Swap memory total (MB): 3072.00
+	Swap memory used (MB): 2551.31
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:forge, mod:explosivesmod
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Launched Version: MOD_DEV
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.3.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.0.19.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.0.19.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.0.19.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.0.19.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.0.19.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1|Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		                                                  |Forge                         |forge                         |47.0.19             |DONE      |Manifest: NOSIGNATURE
+		main                                              |Explosives Mod                |explosivesmod                 |0.1-1.20.1          |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 6c0b7f51-f046-4d6e-9b91-15e96734fbc0
+	FML: 47.0
+	Forge: net.minecraftforge:47.0.19

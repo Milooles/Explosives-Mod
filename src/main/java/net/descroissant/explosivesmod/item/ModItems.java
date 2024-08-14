@@ -1,7 +1,7 @@
 package net.descroissant.explosivesmod.item;
 
 import net.descroissant.explosivesmod.ExplosivesMod;
-import net.descroissant.explosivesmod.item.custom.GrenadeItem;
+import net.descroissant.explosivesmod.item.custom.throwables.GrenadeItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

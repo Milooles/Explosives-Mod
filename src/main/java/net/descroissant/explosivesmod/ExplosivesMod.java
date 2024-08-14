@@ -4,8 +4,13 @@ import com.mojang.logging.LogUtils;
 import net.descroissant.explosivesmod.entity.ModEntities;
 import net.descroissant.explosivesmod.item.ModCreativeModeTabs;
 import net.descroissant.explosivesmod.item.ModItems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.network.chat.ChatType;
+import net.minecraft.network.chat.OutgoingChatMessage;
+import net.minecraft.network.chat.PlayerChatMessage;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -39,6 +44,19 @@ public class ExplosivesMod {
         modEventBus.addListener(this::addCreative);
     }
 
+    public static void sendMessage(String message) {
+        Player player = Minecraft.getInstance().player;
+        if (player != null) {
+            PlayerChatMessage chatMessage =
+                    PlayerChatMessage.unsigned(player.getUUID(), message);
+
+            player.createCommandSourceStack()
+                    .sendChatMessage(new OutgoingChatMessage.Player(chatMessage),
+                            false,
+                            ChatType.bind(ChatType.CHAT, player));
+        }
+    }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
@@ -50,7 +68,7 @@ public class ExplosivesMod {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-
+        ExplosivesMod.LOGGER.warn("Server started!");
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
